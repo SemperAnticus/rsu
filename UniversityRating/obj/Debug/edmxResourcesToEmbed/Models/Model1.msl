@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UniversityRatingModelStoreContainer" CdmEntityContainer="UniversityRatingEntities8">
+    <EntitySetMapping Name="Block_Facility">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Block_Facility">
+        <MappingFragment StoreEntitySet="Block_Facility">
+          <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Block_Kafedra">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Block_Kafedra">
+        <MappingFragment StoreEntitySet="Block_Kafedra">
+          <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Block_Teachers">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Block_Teachers">
+        <MappingFragment StoreEntitySet="Block_Teachers">
+          <ScalarProperty Name="CodeName" ColumnName="CodeName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calculation_Rules_Facility">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Calculation_Rules_Facility">
+        <MappingFragment StoreEntitySet="Calculation_Rules_Facility">
+          <ScalarProperty Name="Id_Calculation_Rule_Kafedra" ColumnName="Id_Calculation_Rule_Kafedra" />
+          <ScalarProperty Name="Id_Category" ColumnName="Id_Category" />
+          <ScalarProperty Name="Id_Criteria" ColumnName="Id_Criteria" />
+          <ScalarProperty Name="TypeOfOperating" ColumnName="TypeOfOperating" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Calculation_Rules_Kafedra">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Calculation_Rules_Kafedra">
+        <MappingFragment StoreEntitySet="Calculation_Rules_Kafedra">
+          <ScalarProperty Name="Id_Category" ColumnName="Id_Category" />
+          <ScalarProperty Name="Id_Criteria" ColumnName="Id_Criteria" />
+          <ScalarProperty Name="TypeOfOperating" ColumnName="TypeOfOperating" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category_Facility">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Category_Facility">
+        <MappingFragment StoreEntitySet="Category_Facility">
+          <ScalarProperty Name="Id_block" ColumnName="Id_block" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category_Kafedra">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Category_Kafedra">
+        <MappingFragment StoreEntitySet="Category_Kafedra">
+          <ScalarProperty Name="Id_Block" ColumnName="Id_Block" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Category_Teachers">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Category_Teachers">
+        <MappingFragment StoreEntitySet="Category_Teachers">
+          <ScalarProperty Name="Id_block" ColumnName="Id_block" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comissions">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Comission">
+        <MappingFragment StoreEntitySet="Comission">
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="Id_Position" ColumnName="Id_Position" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Criteria_Facility">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Criteria_Facility">
+        <MappingFragment StoreEntitySet="Criteria_Facility">
+          <ScalarProperty Name="Id_Category" ColumnName="Id_Category" />
+          <ScalarProperty Name="Mark" ColumnName="Mark" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Criteria_Kafedra">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Criteria_Kafedra">
+        <MappingFragment StoreEntitySet="Criteria_Kafedra">
+          <ScalarProperty Name="Id_Category" ColumnName="Id_Category" />
+          <ScalarProperty Name="Mark" ColumnName="Mark" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facilities">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Facility">
+        <MappingFragment StoreEntitySet="Facility">
+          <ScalarProperty Name="MarkB5" ColumnName="MarkB5" />
+          <ScalarProperty Name="MarkB4" ColumnName="MarkB4" />
+          <ScalarProperty Name="MarkB3" ColumnName="MarkB3" />
+          <ScalarProperty Name="MarkB2" ColumnName="MarkB2" />
+          <ScalarProperty Name="MarkB1" ColumnName="MarkB1" />
+          <ScalarProperty Name="SName" ColumnName="SName" />
+          <ScalarProperty Name="Id_TeacherDecan" ColumnName="Id_TeacherDecan" />
+          <ScalarProperty Name="TotalMark" ColumnName="TotalMark" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Kafedras">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Kafedra">
+        <MappingFragment StoreEntitySet="Kafedra">
+          <ScalarProperty Name="MarkB5" ColumnName="MarkB5" />
+          <ScalarProperty Name="MarkB4" ColumnName="MarkB4" />
+          <ScalarProperty Name="MarkB3" ColumnName="MarkB3" />
+          <ScalarProperty Name="MarkB2" ColumnName="MarkB2" />
+          <ScalarProperty Name="MarkB1" ColumnName="MarkB1" />
+          <ScalarProperty Name="SName" ColumnName="SName" />
+          <ScalarProperty Name="Id_TeacherZav" ColumnName="Id_TeacherZav" />
+          <ScalarProperty Name="Is_Released" ColumnName="Is_Released" />
+          <ScalarProperty Name="TotalMark" ColumnName="TotalMark" />
+          <ScalarProperty Name="Id_Facility" ColumnName="Id_Facility" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mark_Facility">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Mark_Facility">
+        <MappingFragment StoreEntitySet="Mark_Facility">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Kolvo_mark" ColumnName="Kolvo_mark" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Kolvo_ed" ColumnName="Kolvo_ed" />
+          <ScalarProperty Name="Id_Criteria" ColumnName="Id_Criteria" />
+          <ScalarProperty Name="Id_Facility" ColumnName="Id_Facility" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mark_Kafedra">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Mark_Kafedra">
+        <MappingFragment StoreEntitySet="Mark_Kafedra">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Kolvo_Mark" ColumnName="Kolvo_Mark" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Kolvo_ed" ColumnName="Kolvo_ed" />
+          <ScalarProperty Name="Id_Criteria" ColumnName="Id_Criteria" />
+          <ScalarProperty Name="Id_Kafedra" ColumnName="Id_Kafedra" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mark_Teachers">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Mark_Teachers">
+        <MappingFragment StoreEntitySet="Mark_Teachers">
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Kolvo_Mark" ColumnName="Kolvo_Mark" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Kolvo_ed" ColumnName="Kolvo_ed" />
+          <ScalarProperty Name="Id_Criteria" ColumnName="Id_Criteria" />
+          <ScalarProperty Name="Id_teachers" ColumnName="Id_teachers" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MarkTeachersChecks">
+      <EntityTypeMapping TypeName="UniversityRatingModel.MarkTeachersCheck">
+        <MappingFragment StoreEntitySet="MarkTeachersChecks">
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="newStatus" ColumnName="newStatus" />
+          <ScalarProperty Name="oldStatus" ColumnName="oldStatus" />
+          <ScalarProperty Name="Id_MarkTeacher" ColumnName="Id_MarkTeacher" />
+          <ScalarProperty Name="Id_Comission" ColumnName="Id_Comission" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Position_Teachers">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Position_Teachers">
+        <MappingFragment StoreEntitySet="Position_Teachers">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Role">
+        <MappingFragment StoreEntitySet="Roles">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status_Doc_Facility">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Status_Doc_Facility">
+        <MappingFragment StoreEntitySet="Status_Doc_Facility">
+          <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id_Mark_Facility" ColumnName="Id_Mark_Facility" />
+          <ScalarProperty Name="Link_Doc" ColumnName="Link_Doc" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status_Doc_Kafedra">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Status_Doc_Kafedra">
+        <MappingFragment StoreEntitySet="Status_Doc_Kafedra">
+          <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id_Mark_Kafedra" ColumnName="Id_Mark_Kafedra" />
+          <ScalarProperty Name="Link_Doc" ColumnName="Link_Doc" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status_Doc_Teacher">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Status_Doc_Teacher">
+        <MappingFragment StoreEntitySet="Status_Doc_Teacher">
+          <ScalarProperty Name="FileContent" ColumnName="FileContent" />
+          <ScalarProperty Name="FileType" ColumnName="FileType" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id_Mark_Teacher" ColumnName="Id_Mark_Teacher" />
+          <ScalarProperty Name="Link_Doc" ColumnName="Link_Doc" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="UniversityRatingModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teachers">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Teacher">
+        <MappingFragment StoreEntitySet="Teachers">
+          <ScalarProperty Name="Staj" ColumnName="Staj" />
+          <ScalarProperty Name="data_priema" ColumnName="data_priema" />
+          <ScalarProperty Name="vypusk" ColumnName="vypusk" />
+          <ScalarProperty Name="d_b" ColumnName="d_b" />
+          <ScalarProperty Name="Id_User" ColumnName="Id_User" />
+          <ScalarProperty Name="Is_Staff" ColumnName="Is_Staff" />
+          <ScalarProperty Name="Id_Position" ColumnName="Id_Position" />
+          <ScalarProperty Name="Id_Kafedra" ColumnName="Id_Kafedra" />
+          <ScalarProperty Name="TotalMark" ColumnName="TotalMark" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="UniversityRatingModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="IsFirstTimeLogin" ColumnName="IsFirstTimeLogin" />
+          <ScalarProperty Name="loginRu" ColumnName="loginRu" />
+          <ScalarProperty Name="Id_Role" ColumnName="Id_Role" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Сriteria_Teachers">
+      <EntityTypeMapping TypeName="UniversityRatingModel.Сriteria_Teachers">
+        <MappingFragment StoreEntitySet="Сriteria_Teachers">
+          <ScalarProperty Name="Id_Category" ColumnName="Id_Category" />
+          <ScalarProperty Name="Mark" ColumnName="Mark" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

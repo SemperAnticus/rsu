@@ -1,0 +1,474 @@
+﻿@model UniversityRating.Models.ReportKafedra
+
+@{
+    ViewBag.Title = "Кафедры";
+}
+
+<h2 style="text-align: center; padding: 10px 40px;
+ width: 80%; margin: 0 auto; border-radius: 0 0 1em 1em;
+ background-color: #ecf0f1;">
+    Рейтинг среди кафедр
+</h2>
+
+@if (ViewBag.IsRealesed)
+{
+    <div style="text-align: center; margin: 1em;">
+        <a href="" class="btn btn-primary">Выпускающие кафедры</a>
+        <a href="/RatingReports/Departments?IsRealesed=false" class="btn btn-default">Не выпускающие кафедры</a>
+    </div>
+}
+else
+{
+    <div style="text-align: center; margin: 1em;">
+        <a href="/RatingReports/Departments?IsRealesed=true" class="btn btn-default">Выпускающие кафедры</a>
+        <a href="" class="btn btn-primary">Не выпускающие кафедры</a>
+    </div>
+}
+
+
+
+<h4 > Сортировка по: </h4>
+<div class="tabset">
+    <!-- Tab 1 -->
+    <input type="radio" name="tabset" id="tab1" aria-controls="total" checked>
+    <label for="tab1">Итоговый балл</label>
+    <!-- Tab 2 -->
+    <input type="radio" name="tabset" id="tab2" aria-controls="b1">
+    <label for="tab2">Блок-1</label>
+    <!-- Tab 3 -->
+    <input type="radio" name="tabset" id="tab3" aria-controls="b2">
+    <label for="tab3">Блок-2</label>
+    <!-- Tab 4 -->
+    <input type="radio" name="tabset" id="tab4" aria-controls="b3">
+    <label for="tab4">Блок-3</label>
+    <!-- Tab 5 -->
+    <input type="radio" name="tabset" id="tab5" aria-controls="b4">
+    <label for="tab5">Блок-4</label>
+    <!-- Tab 5 -->
+    <input type="radio" name="tabset" id="tab6" aria-controls="b5">
+    <label for="tab6">Блок-5</label>
+
+    <div class="tab-panels">
+        <section id="total" class="tab-panel">
+
+            <table class="table" style="table-layout: fixed;">
+                <tr>
+                    <th style="width: 40px;">
+                        №
+                    </th>
+                    <th style="width: 200px;">
+                        Кафедра
+                    </th>
+                    <th style="width: 200px;">
+                        Факультет
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-1
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-2
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-3
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-4
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-5
+                    </th>
+                    <th style="width: 70px;">
+                        Итоговый балл
+                    </th>
+                </tr>
+
+                @for (int i = 0; i < Model.kafsByTotal.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @(i + 1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].KafedraName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].FacultyName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B3)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B4)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B5)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].BTotal)
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </section>
+        <section id="b1" class="tab-panel">
+
+            <table class="table" style="table-layout: fixed;">
+                <tr>
+                    <th style="width: 40px;">
+                        №
+                    </th>
+                    <th style="width: 200px;">
+                        Кафедра
+                    </th>
+                    <th style="width: 200px;">
+                        Факультет
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-1
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-2
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-3
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-4
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-5
+                    </th>
+                    <th style="width: 70px;">
+                        Итоговый балл
+                    </th>
+                </tr>
+
+                @for (int i = 0; i < Model.kafsByB1.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @(i + 1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].KafedraName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].FacultyName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B3)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B4)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B5)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].BTotal)
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </section>
+        <section id="b2" class="tab-panel">
+
+            <table class="table" style="table-layout: fixed;">
+                <tr>
+                    <th style="width: 40px;">
+                        №
+                    </th>
+                    <th style="width: 200px;">
+                        Кафедра
+                    </th>
+                    <th style="width: 200px;">
+                        Факультет
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-1
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-2
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-3
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-4
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-5
+                    </th>
+                    <th style="width: 70px;">
+                        Итоговый балл
+                    </th>
+                </tr>
+
+                @for (int i = 0; i < Model.kafsByB2.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @(i + 1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].KafedraName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].FacultyName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B3)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B4)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B5)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].BTotal)
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </section>
+        <section id="b3" class="tab-panel">
+
+            <table class="table" style="table-layout: fixed;">
+                <tr>
+                    <th style="width: 40px;">
+                        №
+                    </th>
+                    <th style="width: 200px;">
+                        Кафедра
+                    </th>
+                    <th style="width: 200px;">
+                        Факультет
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-1
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-2
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-3
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-4
+                    </th>
+                    <th style="width: 70px;">
+                        Блок-5
+                    </th>
+                    <th style="width: 70px;">
+                        Итоговый балл
+                    </th>
+                </tr>
+
+                @for (int i = 0; i < Model.kafsByB3.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @(i + 1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].KafedraName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].FacultyName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B2)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B3)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B4)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].B5)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.kafsByTotal[i].BTotal)
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </section>
+    <section id="b4" class="tab-panel">
+
+        <table class="table" style="table-layout: fixed;">
+            <tr>
+                <th style="width: 40px;">
+                    №
+                </th>
+                <th style="width: 200px;">
+                    Кафедра
+                </th>
+                <th style="width: 200px;">
+                    Факультет
+                </th>
+                <th style="width: 70px;">
+                    Блок-1
+                </th>
+                <th style="width: 70px;">
+                    Блок-2
+                </th>
+                <th style="width: 70px;">
+                    Блок-3
+                </th>
+                <th style="width: 70px;">
+                    Блок-4
+                </th>
+                <th style="width: 70px;">
+                    Блок-5
+                </th>
+                <th style="width: 70px;">
+                    Итоговый балл
+                </th>
+            </tr>
+
+            @for (int i = 0; i < Model.kafsByB4.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @(i + 1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].KafedraName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].FacultyName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].B1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].B2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].B3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].B4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].B5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].BTotal)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+
+    </section>
+    <section id="b5" class="tab-panel">
+
+        <table class="table" style="table-layout: fixed;">
+            <tr>
+                <th style="width: 40px;">
+                    №
+                </th>
+                <th style="width: 200px;">
+                    Кафедра
+                </th>
+                <th style="width: 200px;">
+                    Факультет
+                </th>
+                <th style="width: 70px;">
+                    Блок-1
+                </th>
+                <th style="width: 70px;">
+                    Блок-2
+                </th>
+                <th style="width: 70px;">
+                    Блок-3
+                </th>
+                <th style="width: 70px;">
+                    Блок-4
+                </th>
+                <th style="width: 70px;">
+                    Блок-5
+                </th>
+                <th style="width: 70px;">
+                    Итоговый балл
+                </th>
+            </tr>
+
+            @for (int i = 0; i < Model.kafsByB5.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @(i + 1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].KafedraName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].FacultyName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].B1)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].B2)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].B3)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].B4)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].B5)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(m => Model.kafsByTotal[i].BTotal)
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+
+    </section>
+
+    </div>
+
+
+</div>

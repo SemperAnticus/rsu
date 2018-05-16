@@ -1,0 +1,147 @@
+﻿@model List<UniversityRating.Models.MarkObject>
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 style="text-align: center; color: #180f44; display: block; padding: 10px 40px; border-radius: 20px; background-color: #ecf0f1; margin-bottom: 0;">Блок: @ViewBag.CurrentBlockName</h2>
+
+<h4 style="text-align: center; padding: 10px 40px;
+ width: 80%; margin: 0 auto; border-radius: 0 0 1em 1em; 
+ background-color: #e74c3c; color: white;">Категория: @ViewBag.CurrentCategoryName ( @ViewBag.CurrentNumCategory/@ViewBag.TotalNumCategory)</h4>
+
+@using (Html.BeginForm("Create", "EditMark_Teachers", null, FormMethod.Post, new { name = "saveMarks", id = @ViewBag.IdBLock, enctype = "multipart/form-data"}))
+{
+    @Html.AntiForgeryToken()
+
+    <table class="table" style="margin-top: 2em;">
+        <tr style="font-size: 1.3em;">
+            <th>
+                Название критерия
+            </th>
+            <th>
+                Включить
+            </th>
+            <th>
+                Количество
+            </th>
+            <th>
+                Подтверждающий документ
+            </th>
+        </tr>
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr style="height: 75px;">
+                <td style="font-size: 1.2em;">
+                    @Html.EditorFor(modelItem => Model[i].CriteriaId, new {htmlAttributes = new {@style = "display:none;"}})
+                    @Html.DisplayFor(modelItem => Model[i].CriteriaName, new {@class = "form-control"})
+                    @Html.EditorFor(modelItem => Model[i].CriteriaName, new {htmlAttributes = new {@style = "display:none;"}})
+                </td>
+                <td>
+                    @Html.EditorFor(modelItem => Model[i].IsUsing, new {htmlAttributes = new {@class = "form-control", @onclick = "showElements(" + @Model[i].CriteriaId + ")"}})
+                </td>
+                <td>
+                    @Html.EditorFor(modelItem => Model[i].Count, new {htmlAttributes = new {@min="1", @class = "form-control", @id = @Model[i].CriteriaId + "-1", @style = @Model[i].IsUsing ? "display:block; width: 80px; margin-top: 6px;" : "display:none; width: 80px; margin-top: 6px;"}})
+                </td>
+                <td style="width: 400px;">
+                    @if (@Model[i].IsUsing)
+                    {
+                        string curId = "file" + i;
+                        string curLabId = "label" + i;
+                        <div id="@Model[i].CriteriaId-2" class="col-md-10" style="display: block; margin-top: 9px;">
+                            @if (@Model[i].HasDoc)
+                            { 
+                                <div class="row">
+                                    <label for=@curId style="float: left;" class="btn btn-default">Выбрать...</label> <label id=@curLabId style="margin-left: 0.8em; margin-top: 1em;">@Model[i].DocName</label>
+                                    <input style="margin-top: 3px; display: none;" type="file" id=@curId name="upload" onchange="newFileName(@curId, @curLabId)"/>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="row">
+                                    <label for="@curId" style="float: left;" class="btn btn-default">Выбрать...</label> <label id=@curLabId style="margin-left: 0.8em; margin-top: 1em;">Файл не выбран</label>
+                                    <input style="margin-top: 3px; display: none;" type="file" id=@curId name="upload" onchange="newFileName(@curId, @curLabId)"/>
+                                </div>
+                            }
+
+                            @Html.EditorFor(modelItem => Model[i].DocName, new { htmlAttributes = new { @style = "display:none;" } })
+                            @Html.EditorFor(modelItem => Model[i].FullDocName, new { htmlAttributes = new { @style = "display:none;" } })
+                            @Html.EditorFor(modelItem => Model[i].HasDoc, new { htmlAttributes = new { @style = "display:none;" } })
+                        </div>
+                    }
+                    else
+                    {
+                        string curId = "file" + i;
+                        string curLabId = "label" + i;
+                        <div id="@Model[i].CriteriaId-2" class="col-md-10" style="display: none; margin-top: 9px;">
+                            <div class="row">
+                                <label for=@curId style="float: left;" class="btn btn-default">Выбрать...</label> <label id=@curLabId style="margin-left: 0.8em; margin-top: 1em;">Файл не выбран</label>
+                                <input style="margin-top: 3px; display: none;" type="file" id=@curId name="upload" onchange="newFileName(@curId, @curLabId)"/>
+                            </div>
+                                @Html.EditorFor(modelItem => Model[i].DocName, new { htmlAttributes = new { @style = "display:none;" } })
+                                @Html.EditorFor(modelItem => Model[i].FullDocName, new { htmlAttributes = new { @style = "display:none;" } })
+                                @Html.EditorFor(modelItem => Model[i].HasDoc, new { htmlAttributes = new { @style = "display:none;" } })
+                            </div>
+                    }
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    
+    <div class="form-actions no-color" style="float: right;">
+        <input type="hidden" value="@ViewBag.CurrentBlockName" name="IdCurrentBlock"/>
+        <input type="hidden" value="@ViewBag.CurrentCategoryName" name="IdCurrentCategory"/>
+        <input type="hidden" value="@ViewBag.NextIdCategory" name="idCategory" id="idCategory"/>
+
+        @if (@ViewBag.PrevCategoryId != null)
+        {
+            <input type="button" value="Предыдущая" onclick="changeNextPageForPrev(@ViewBag.PrevCategoryId)" class="btn btn-primary" />
+        }
+
+       @if (ViewBag.NextIdCategory != null)
+       {
+           <input type="submit" value="Следующая" class="btn btn-primary"/>
+       }
+       else
+       {
+           <input type="submit" value="Закончить" class="btn btn-primary" />
+       }
+
+    </div>
+}
+
+@section scripts {
+    <script type="text/javascript">
+        function showElements(element) {
+            var element1 = element + '-1';
+            if (document.getElementById(element1).style.display == 'none') {
+                document.getElementById(element1).style.display = 'block';
+            }
+            else if (document.getElementById(element1).style.display == 'block') {
+                document.getElementById(element1).style.display = 'none';
+            }
+
+            var element2 = element + '-2';
+            if (document.getElementById(element2).style.display == 'none') {
+                document.getElementById(element2).style.display = 'block';
+            }
+            else if (document.getElementById(element2).style.display == 'block') {
+                document.getElementById(element2).style.display = 'none';
+            }
+        }
+
+        function changeNextPageForPrev(newValue) {
+            document.getElementById('idCategory').value = newValue;
+            document.saveMarks.submit();
+        }
+
+        function newFileName(elementId, textElementId) {
+            document.getElementById(textElementId).innerHTML = document.getElementById(elementId).value;
+        }
+    </script>
+}

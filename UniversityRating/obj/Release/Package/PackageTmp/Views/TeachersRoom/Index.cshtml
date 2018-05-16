@@ -1,0 +1,65 @@
+﻿@model List<UniversityRating.Models.ShowMarksObject>
+
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Панель учителя</h2>
+
+@foreach (var item in @ViewBag.Blocks)
+{
+    <a href="/TeachersRoom/Index/@item.Id" class="btn btn-default" style="text-decoration: none;">
+        <span class="txt">@item.CodeName</span>
+        <span class="round"><i class="fa fa-chevron-right"></i></span>
+    </a>
+}
+
+<h3>Общий балл: @ViewBag.BlockTotalPoints</h3>
+
+@for (int i = 0; i < Model.Count; i++)
+{
+
+    <h4 style="margin-top: 2em;">@Model[i].CategoryName</h4>
+    <table class="table" style="margin-top: 2em;">
+        <tr style="font-size: 1.3em;">
+            <th>
+                Название критерия
+            </th>
+            <th>
+                Количество
+            </th>
+            <th>
+                Оценка
+            </th>
+            <th>
+                Дата
+            </th>
+            <th>
+                Статус
+            </th>
+        </tr>
+
+        @foreach (var item in Model[i].CategoryMarks)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Сriteria_Teachers.Name, new { @class = "form-control" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kolvo_ed, new { @class = "form-control" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Kolvo_Mark, new { @class = "form-control" })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date, new {@class = "form-control"})
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Status, new { @class = "form-control" })
+                </td>
+            </tr>
+        }
+
+    </table>
+}

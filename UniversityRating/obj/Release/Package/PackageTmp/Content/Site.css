@@ -1,0 +1,154 @@
+﻿
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-inverse {
+    background-color: #1a2d5a !important;
+}
+
+.btn {
+    margin: 4px auto;
+}
+
+.container-rating {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.428571429;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: 24px;
+    margin-left: 2em;
+}
+
+.c-preview {
+  background-size: 400% 400%;
+  background-repeat: no-repeat;
+  display: flex;
+  width: 280px;
+  height: 130px;
+  border-radius: 33px;
+  max-width: 100vw;
+  max-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  color: #517160;
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s all;
+  text-align: center;
+}
+.c-preview__img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  opacity: 0.5;
+}
+.c-preview__title {
+  position: relative;
+  z-index: 10;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+    text-decoration: none;
+    font-weight: 700;
+    border: 6px solid #7aa49c;
+border-radius: 20px;
+padding: 10px;
+}
+.c-preview__title:hover {
+    background: #7aa49c;
+}
+.c-preview:hover {
+  background-position: 100% 100%;
+  text-shadow: 0 0 20px black;
+    color: white;
+    text-decoration: none;
+}
+
+
+.btn-custom {
+  color: #333333;
+  background-color: #ffffff;
+  border-color: #fbba00;
+}
+
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active,
+.btn-custom.active,
+.open .dropdown-toggle.btn-custom {
+  color: #333333;
+  background-color: #e9c83e;
+  border-color: #fbba00;
+}
+
+
+/* Dyadya Fedya*/
+
+.wrapper label {
+  cursor: pointer;
+  /*float: left;*/
+  margin-right: 5px;
+  display: block;
+  padding: 10px 40px;
+  background-color: #ecf0f1;
+  border-radius: 20px;
+}
+.wrapper input {
+  display: none;
+}
+.wrapper input:checked + label{
+  background-color: #e74c3c;
+  color: #fefefe;
+}
+
+.disabled {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+.btn-1 {
+    color: #34495e;
+    background-color: #ecf0f1;
+    padding: 10px 50px;
+    display: block;
+    width: 70%;
+    border-radius: 25px;
+    margin: 0.7em auto;
+    border: 6px solid rgba(207, 217, 227, 0.15);
+    font-size: 1.2em;
+}
+
+.btn-1:hover {
+    background-color: #e74c3c;
+    color: #fefefe;
+}

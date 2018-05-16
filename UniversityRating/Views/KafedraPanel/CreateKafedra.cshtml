@@ -1,0 +1,191 @@
+﻿@using System.Collections
+@using Newtonsoft.Json
+@using UniversityRating.Models
+@model List<UniversityRating.Models.MarkObjectKafedra>
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 style="text-align: center; color: #180f44; display: block; padding: 10px 40px; border-radius: 20px; background-color: #ecf0f1; margin-bottom: 0;">Блок: @ViewBag.CurrentBlockName</h2>
+
+<h4 style="text-align: center; padding: 10px 40px;
+ width: 80%; margin: 0 auto; border-radius: 0 0 1em 1em;
+ background-color: #e74c3c; color: white;">
+    Критерий: @ViewBag.CurrentCategoryName ( @ViewBag.CurrentNumCategory/@ViewBag.TotalNumCategory)
+</h4>
+
+@using (Html.BeginForm("CreateKafedra", "KafedraPanel", null, FormMethod.Post, new { name = "saveMarks", id = @ViewBag.IdBLock, enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <table class="table" style="margin-top: 2em;">
+        <tr style="font-size: 1.3em;">
+            <th>
+                Оценочный показатель
+            </th>
+            <th>
+                Включить
+            </th>
+            <th>
+                Количество
+            </th>
+            <th>
+                Подтверждающий документ
+            </th>
+        </tr>
+
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <tr style="height: 75px;">
+                <td style="font-size: 1.2em;">
+                    @Html.EditorFor(modelItem => Model[i].CriteriaId, new { htmlAttributes = new { @style = "display:none;" } })
+                    @Html.DisplayFor(modelItem => Model[i].CriteriaName, new { @class = "form-control" })
+                    @Html.EditorFor(modelItem => Model[i].CriteriaName, new { htmlAttributes = new { @style = "display:none;" } })
+                </td>
+                <td>
+                    @Html.EditorFor(modelItem => Model[i].IsUsing, new { htmlAttributes = new { @class = "form-control", @onclick = "showElements(" + @Model[i].CriteriaId + ")" } })
+                </td>
+                <td>
+                    @Html.EditorFor(modelItem => Model[i].Count, new { htmlAttributes = new { @min = "1", @class = "form-control", @id = @Model[i].CriteriaId + "-1", @style = @Model[i].IsUsing ? "display:block; width: 80px; margin-top: 6px;" : "display:none; width: 80px; margin-top: 6px;" } })
+                </td>
+                <td style="width: 400px;">
+                    @if (@Model[i].IsUsing)
+
+                    {
+                        int k = 0;
+                        string curId = "file" + i;
+                        <div id="@Model[i].CriteriaId-2" style="display: block;">
+                            <div class="k-content">
+                                <div class="k-widget k-upload k-header k-upload-sync">
+                                    <ul class="k-upload-files k-reset   ">
+                                        @foreach (var ef in Model[i].ExistingFiles)
+                                        {
+                                            string fName = ef.file.Name;
+                                            string fType = ef.file.FileType;
+                                            string fFullName = ef.file.Link_Doc;
+                                            string idIsRemove = "boolRemove" + @ef.file.Id;
+                                            string str = @ef.file.FileType;
+                                            int index = str.IndexOf('/');
+                                            str = str.Substring(index + 1);
+                                            <li class="k-file" id=@ef.file.Id>
+                                                <a target="_blank" href="/EditMark_Teachers/GetFile?fileFullName=@fFullName&fileType=@fType&fileName=@fName"><span class="k-icon k-i-download k-icon-64" style="font-size: 30px;"></span></a>
+                                                <span class="k-file-extension-wrapper">
+                                                    <span class="k-file-extension">@str</span>
+                                                </span>
+
+                                                <span class="k-file-name-size-wrapper">
+                                                    <span class="k-file-name" title="@ef.file.Name">@ef.file.Name</span>
+                                                    <span class="k-file-size">@ef.file.FileContent B</span>
+                                                </span>
+                                                @Html.HiddenFor(m => Model[i].IsRemoved[k], new { id = @idIsRemove })
+                                                <strong class="k-upload-status">
+                                                    <button type="button" class="k-button k-upload-action" aria-label="Remove" onclick="removeFile(@ef.file.Id)">
+                                                        <span class="k-icon k-i-close k-i-x" title="Remove"></span>
+                                                    </button>
+                                                </strong>
+                                            </li>
+                                            k++;
+                                        }
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="k-content">
+                                @Html.TextBoxFor(m => Model[i].NewFiles, new { type = "file", name = "Files", id = @curId })
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        string curId = "file" + i;
+                        <div class="k-content" id="@Model[i].CriteriaId-2" style="display: none;">
+                            @Html.TextBoxFor(m => Model[i].NewFiles, new { type = "file", name = "Files", id = @curId })
+                        </div>
+
+                    }
+
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+    <div class="form-actions no-color" style="float: right;">
+        <input type="hidden" value="@ViewBag.CurrentBlockName" name="IdCurrentBlock" />
+        <input type="hidden" value="@ViewBag.CurrentCategoryName" name="IdCurrentCategory" />
+        <input type="hidden" value="@ViewBag.NextIdCategory" name="idCategory" id="idCategory" />
+
+        @if (@ViewBag.PrevCategoryId != null)
+        {
+            <input type="button" value="Предыдущая" onclick="changeNextPageForPrev(@ViewBag.PrevCategoryId)" class="btn btn-primary" />
+        }
+
+        <input type="button" value="Сохранить" onclick="changeNextPageForPrev(@ViewBag.IdCategory)" class="btn btn-primary" />
+        @if (ViewBag.NextIdCategory != null)
+        {
+            <input type="submit" value="Следующая" class="btn btn-primary" />
+        }
+        else
+        {
+            <input type="submit" value="Закончить" class="btn btn-primary" />
+        }
+
+    </div>
+}
+
+@section scripts {
+    <script>
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            string id = "file" + i;
+        <text>
+        $(document).ready(function () {
+            $(@id).kendoUpload();
+        });
+
+        $(document).ready(function () {
+            $(@id).closest(".k-upload").find("span").text("Добавить документ");
+        });
+        </text>
+        }
+
+    </script>
+
+    <script type="text/javascript">
+
+        function removeFile(element) {
+            document.getElementById(element).style.display = 'none';
+            var idIsRemove = 'boolRemove' + element;
+            document.getElementById(idIsRemove).value = true;
+        }
+
+        function showElements(element) {
+            var element1 = element + '-1';
+            if (document.getElementById(element1).style.display == 'none') {
+                document.getElementById(element1).style.display = 'block';
+            }
+            else if (document.getElementById(element1).style.display == 'block') {
+                document.getElementById(element1).style.display = 'none';
+            }
+
+            var element2 = element + '-2';
+            if (document.getElementById(element2).style.display == 'none') {
+                document.getElementById(element2).style.display = 'block';
+            }
+            else if (document.getElementById(element2).style.display == 'block') {
+                document.getElementById(element2).style.display = 'none';
+            }
+        }
+
+        function changeNextPageForPrev(newValue) {
+            document.getElementById('idCategory').value = newValue;
+            document.saveMarks.submit();
+        }
+
+        function newFileName(elementId, textElementId) {
+            document.getElementById(textElementId).innerHTML = document.getElementById(elementId).value;
+        }
+    </script>
+}

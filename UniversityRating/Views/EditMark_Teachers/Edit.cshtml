@@ -1,0 +1,77 @@
+﻿@model UniversityRating.Models.MarkTeacherViewModel
+
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2 style="text-align: center;">Редактирование оценки</h2>
+
+@using (Html.BeginForm("Edit", "EditMark_Teachers", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="centered-content col-md-8 col-md-offset-2">
+        <div class="form-horizontal">
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Categories, "Категория", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(x => x.SelectedCategoryId, new SelectList(Model.Categories, "Value", "Text"), "Выбрать категорию..", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Categories, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Criterias, "Критерий", htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.DropDownListFor(x => x.SelectedCriteriaId, new SelectList(Model.Criterias, "Value", "Text"), "Выбрать критерий..", new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Criterias, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Kolvo_ed, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Kolvo_ed, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Kolvo_ed, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.Label("Документ", new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    <input type="file" id="Photo" name="upload" />
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <a href="/TeachersRoom/MainMenu" class="btn btn-default">Отмена</a>
+                    <input type="hidden" name="IdBlock" value="@ViewBag.IdBlock" />
+                    <input type="submit" value="Сохранить изменения " class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="centered-content col-md-2">
+        </div>
+}
+
+@section scripts {
+    <script type="text/javascript">
+        $(function() {
+            $("#SelectedCategoryId").change(function() {
+                var val = $(this).val();
+                var subItems = "";
+                $.getJSON("@Url.Action("GetCriterias", "EditMark_Teachers")", { id: val }, function(data) {
+                    $.each(data, function(index, item) {
+                        subItems += "<option value='" + item.Value + "'>" + item.Text + "</option>"
+                    });
+                    $("#SelectedCriteriaId").html(subItems)
+                });
+            });
+        });
+    </script>
+}

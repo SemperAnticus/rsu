@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="09cedc5b5eac4029adca6970ab2b2d83" Name="Diagram1">
+        <EntityTypeShape EntityType="UniversityRatingModel.Block_Facility" Width="1.5" PointX="1.5" PointY="26.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Block_Kafedra" Width="1.5" PointX="1.5" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Block_Teachers" Width="1.5" PointX="0.75" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Category_Facility" Width="1.5" PointX="1.5" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Category_Kafedra" Width="1.5" PointX="0.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Category_Teachers" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Comission" Width="1.5" PointX="7.5" PointY="19.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Criteria_Facility" Width="1.5" PointX="3.75" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Criteria_Kafedra" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Facility" Width="1.5" PointX="0.75" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Kafedra" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Mark_Facility" Width="1.5" PointX="6" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Mark_Kafedra" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Mark_Teachers" Width="1.5" PointX="7.5" PointY="11.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.MarkTeachersCheck" Width="1.5" PointX="9.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Position_Teachers" Width="1.5" PointX="3" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Role" Width="1.5" PointX="3" PointY="19.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Status_Doc_Facility" Width="1.5" PointX="8.25" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Status_Doc_Kafedra" Width="1.5" PointX="7.5" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Status_Doc_Teacher" Width="1.5" PointX="9.75" PointY="15.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.sysdiagram" Width="1.5" PointX="9.75" PointY="1.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Teacher" Width="1.5" PointX="5.25" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.User" Width="1.5" PointX="5.25" PointY="19.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="UniversityRatingModel.Сriteria_Teachers" Width="1.5" PointX="5.25" PointY="15.5" IsExpanded="true" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Category_Facility_Block_Facility" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Category_Kafedra_Block_Kafedra" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Category_Teachers_Block" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Criteria_Facility_Category_Facility" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Criteria_Kafedra_Category_Kafedra" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Сriteria_Teachers_Category_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Comission_Position_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Comission_Users" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_MarkTeachersChecks_Comission" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Mark_Facility_Criteria_Facility" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Mark_Kafedra_Criteria_Kafedra" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Kafedra_Facility" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Mark_Facility_Facility" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Kafedra_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Mark_Kafedra_Kafedra" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Teachers_Kafedra" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Status_Doc_Facility_Mark_Facility" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Status_Doc_Kafedra_Mark_Kafedra" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Mark_Teachers_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Mark_Teachers_Сriteria_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_MarkTeachersChecks_Mark_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Status_Doc_Teacher_Mark_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Teachers_Position_Teachers" ManuallyRouted="false" />
+        <AssociationConnector Association="UniversityRatingModel.FK_Users_Roles" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

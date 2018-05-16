@@ -1,0 +1,48 @@
+﻿@using Microsoft.AspNet.Identity
+@if (Session["auth"]=="yes")
+{
+    using (Html.BeginForm("LogOff", "Home", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
+    {
+    @Html.AntiForgeryToken()
+
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            @switch ((int)Session["role"])
+            {
+                case (1):
+                    @Html.ActionLink("Моя страничка", "MainMenu", "Admin", routeValues: null, htmlAttributes: new {title = "Manage"});
+                    break;
+                case (2):
+                    @Html.ActionLink("Моя страничка", "MainMenu", "TeachersRoom", routeValues: null, htmlAttributes: new {title = "Manage"});
+                    break;
+                case (3):
+                    @Html.ActionLink("Моя страничка", "MainMenu", "ComissionRoom", routeValues: null, htmlAttributes: new { title = "Manage" })
+                    break;
+            }
+                
+            </li>
+    
+            <li><a href="/Home/Logoff">Выйти</a></li>
+    
+        </ul>
+    }
+}
+else
+{
+   using (Html.BeginForm("Login", "Home", null, FormMethod.Post))
+   {
+    <ul class="nav navbar-nav navbar-right" style="display: inline-flex; margin-top: 1rem;">
+        <li style="display: inherit;">
+            <label style="margin: 7px 10px;">Логин: </label><input class="form-control" type="text" name="login" placeholder="Введите логин" value="aaliev.nursultan" />
+        </li>
+
+        <li style="display: inherit;">
+            <label style="margin: 7px 10px;">Пароль: </label><input class="form-control" type="password" name="password" placeholder="Введите пароль" value="123" />
+        </li>
+
+        <li style="display: inherit;">
+            <input type="submit" value="Войти" class="btn btn-default" style="margin: 0 1rem;" />
+        </li>
+    </ul>
+   }
+}

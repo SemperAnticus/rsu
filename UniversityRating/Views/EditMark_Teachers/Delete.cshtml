@@ -1,0 +1,57 @@
+﻿@model UniversityRating.Models.MarkTeacherViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Удаление оценки</h2>
+
+<h3>Вы уверены, что хотите удалить оценку?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Блок: 
+        </dt>
+
+        <dd>
+            @ViewBag.BlockStr
+        </dd>
+
+        <dt>
+            Категория: 
+        </dt>
+
+        <dd>
+            @ViewBag.CategoryStr
+        </dd>
+
+        <dt>
+            Критерий: 
+        </dt>
+
+        <dd>
+            @ViewBag.CriteriaStr
+        </dd>
+
+        <dt>
+            Количество: 
+        </dt>
+
+        <dd>
+            @ViewBag.Count
+        </dd>
+
+       
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="hidden" value="@ViewBag.IdBlock" name="IdBlock"/> |
+            <input type="submit" value="Удалить" class="btn btn-default" /> 
+            <a href="/EditMark_Teachers/Index/1" class="btn btn-default">Отмена</a>
+        </div>
+    }
+</div>

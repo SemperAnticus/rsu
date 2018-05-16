@@ -1,0 +1,210 @@
+﻿@model UniversityRating.Models.ReportTeachers
+@{
+    ViewBag.Title = "Преподаватели";
+}
+
+<h2 style="text-align: center; padding: 10px 40px;
+ width: 80%; margin: 0 auto; border-radius: 0 0 1em 1em;
+ background-color: #ecf0f1;">
+    Рейтинг среди преподавателей
+</h2>
+
+
+<div class="tabset" style="margin-top: 2em;">
+    <!-- Tab 1 -->
+    <input type="radio" name="tabset" id="tab1" aria-controls="professors" checked>
+    <label for="tab1">Профессоры</label>
+    <!-- Tab 2 -->
+    <input type="radio" name="tabset" id="tab2" aria-controls="docents">
+    <label for="tab2">Доценты</label>
+    <!-- Tab 3 -->
+    <input type="radio" name="tabset" id="tab3" aria-controls="seniorpi">
+    <label for="tab3">Старшие преподаватели</label>
+    <!-- Tab 4 -->
+    <input type="radio" name="tabset" id="tab4" aria-controls="pi">
+    <label for="tab4">Преподаватели</label>
+
+    <div class="tab-panels" >
+        <section id="professors" class="tab-panel">
+
+            <table class="table" style="table-layout: fixed;">
+                <tr>
+                    <th style="width: 40px;">
+                        №
+                    </th>
+                    <th style="width: 200px;">
+                        ФИО
+                    </th>
+                    <th style="width: 200px;">
+                        Кафедра
+                    </th>
+                    <th style="width: 150px;">
+                        Факультет
+                    </th>
+                    <th style="width: 70px;">
+                        Количество баллов
+                    </th>
+                </tr>
+
+                @for (int i = 0; i < Model.ProfessorsList.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @(i + 1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m=>Model.ProfessorsList[i].Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.ProfessorsList[i].Kafedra.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.ProfessorsList[i].Kafedra.Facility.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.ProfessorsList[i].TotalMark)
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+</section>
+        <section id="docents" class="tab-panel">
+
+            <table class="table" style="table-layout: fixed;">
+                <tr>
+                    <th style="width: 40px;">
+                        №
+                    </th>
+                    <th style="width: 200px;">
+                        ФИО
+                    </th>
+                    <th style="width: 200px;">
+                        Кафедра
+                    </th>
+                    <th style="width: 150px;">
+                        Факультет
+                    </th>
+                    <th style="width: 70px;">
+                        Количество баллов
+                    </th>
+                </tr>
+
+                @for (int i = 0; i < Model.DocentsList.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @(i + 1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.DocentsList[i].Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.DocentsList[i].Kafedra.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.DocentsList[i].Kafedra.Facility.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.DocentsList[i].TotalMark)
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </section>
+        <section id="seniorpi" class="tab-panel">
+
+            <table class="table" style="table-layout: fixed;">
+                <tr>
+                    <th style="width: 40px;">
+                        №
+                    </th>
+                    <th style="width: 200px;">
+                        ФИО
+                    </th>
+                    <th style="width: 200px;">
+                        Кафедра
+                    </th>
+                    <th style="width: 150px;">
+                        Факультет
+                    </th>
+                    <th style="width: 70px;">
+                        Количество баллов
+                    </th>
+                </tr>
+
+                @for (int i = 0; i < Model.SeniorPiList.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @(i+1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.SeniorPiList[i].Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.SeniorPiList[i].Kafedra.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.SeniorPiList[i].Kafedra.Facility.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.SeniorPiList[i].TotalMark)
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </section>
+        <section id="seniorpi" class="tab-panel">
+
+            <table class="table" style="table-layout: fixed;">
+                <tr>
+                    <th style="width: 40px;">
+                        №
+                    </th>
+                    <th style="width: 200px;">
+                        ФИО
+                    </th>
+                    <th style="width: 200px;">
+                        Кафедра
+                    </th>
+                    <th style="width: 150px;">
+                        Факультет
+                    </th>
+                    <th style="width: 70px;">
+                        Количество баллов
+                    </th>
+                </tr>
+
+                @for (int i = 0; i < Model.PiList.Count; i++)
+                {
+                    <tr>
+                        <td>
+                            @(i + 1)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.PiList[i].Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.PiList[i].Kafedra.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.PiList[i].Kafedra.Facility.Name)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(m => Model.PiList[i].TotalMark)
+                        </td>
+                    </tr>
+                }
+
+            </table>
+
+        </section>
+    </div>
+
+</div>

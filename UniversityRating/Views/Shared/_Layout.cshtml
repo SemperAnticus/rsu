@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/kendo/css")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/kendo")
+
+    <link rel="stylesheet" href="~/Content/kendo/kekendo.common.min.css">
+    <link rel="stylesheet" href="~/Content/kendo/kendo.rtl.min.css">
+    <link rel="stylesheet" href="~/Content/kendo/kendo.default.min.css">
+    <link rel="stylesheet" href="~/Content/kendo/kendo.mobile.all.min.css">
+
+    <script src="~/Scripts/kendo/jquery-1.12.3.min.js"></script>
+    <script src="~/Scripts/kendo/angular.min.js"></script>
+    <script src="~/Scripts/kendo/jszip.min.js"></script>
+    <script src="~/Scripts/kendo/kendo.all.min.js"></script>
+
+</head>
+<body>
+<div class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            @Html.ActionLink("Главная", "Index", "Home", new {area = ""}, new {@class = "navbar-brand"})
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="disabled">@Html.ActionLink("О системе", "Index", "Home")</li>
+                <li class="disabled">@Html.ActionLink("Руководство", "About", "Home")</li>
+                <li class="disabled">@Html.ActionLink("Контакты", "Contact", "Home")</li>
+                <li><a href="/Home/WhatsMyLogin?firstTLetter=А">Узнать логин</a></li>
+            </ul>
+            @Html.Partial("_LoginPartial")
+        </div>
+    </div>
+
+</div>
+
+        <div class="container body-content" >
+            @RenderBody()
+            <hr />
+            <footer>
+                <p style="font-size: 12px;">&copy; @DateTime.Now.Year – Рейтинговая система университета</p>
+            </footer>
+        </div>
+
+            @RenderSection("scripts", required: false)
+</body>
+</html>

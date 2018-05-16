@@ -1,0 +1,68 @@
+﻿@model UniversityRating.Models.Mark_Teachers
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Mark_Teachers</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Kolvo_ed)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kolvo_ed)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Id_Status)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Id_Status)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Kolvo_Mark)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Kolvo_Mark)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Teacher.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Teacher.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Сriteria_Teachers.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Сriteria_Teachers.Name)
+        </dd>
+
+        @if (Model.Status_Doc_Teacher.Any())
+        {
+            <dt>
+                Ensurance document
+            </dt>
+            <dd>
+                <img src="~/documents/@Model.Status_Doc_Teacher.First().Link_Doc" width="300px" height="400px" alt="" />
+            </dd>
+        }
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

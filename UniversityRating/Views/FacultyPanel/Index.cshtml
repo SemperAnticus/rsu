@@ -1,0 +1,58 @@
+﻿@model UniversityRating.Models.FacultyPanelViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+<div class="row">
+    <div class="col-md-8">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Анкетные данные</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.faculty.Name, "Наименование факультета / института ", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 marghalf">
+                        @Html.DisplayFor(model => model.faculty.Name, new { htmlAttributes = new { @class = "form-control marghalf" } })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.faculty.SName, "Сокращенное наименование ", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 marghalf">
+                        @Html.DisplayFor(model => model.faculty.SName, new { htmlAttributes = new { @class = "form-control marghalf" } })
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    @Html.LabelFor(model => model.faculty.Id_TeacherDecan, "Декан ", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 marghalf">
+                        @Html.DisplayFor(model => model.faculty.Teacher.Name, null, new { @class = "form-control marghalf" })
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+    <div class="col-md-4" style="margin-top: 4em;">
+
+        <a href="/FacultyPanel/FacultyBlocks" style="text-decoration: none;">
+            <input type="button" src="" value="Заполнить рейтинговый лист" class="btn btn-primary" style="width: 280px; display: flex; font-size: 18px; margin-top: 3rem;" />
+        </a>
+
+        <a href="/FacultyPanel/ShowMarks/1" style="text-decoration: none;">
+            <input type="button" src="" value="Посмотреть оценки" class="btn btn-default" style="width: 280px; display: flex; font-size: 18px;" />
+        </a>
+
+    </div>
+</div>
+
+@Html.Partial("KafedrasStatusPartial", Model.ksvmList)

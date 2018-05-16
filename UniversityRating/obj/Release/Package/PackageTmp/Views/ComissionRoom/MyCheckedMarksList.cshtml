@@ -1,0 +1,121 @@
+﻿@model UniversityRating.Models.CheckMarksViewModel
+@using UniversityRating.Models
+@{
+    ViewBag.Title = "UncheckedMarksList";
+}
+
+<h2 style="text-align: center;">Список проверенных мною оценок</h2>
+
+<div class="row">
+    <div class="col-md-8">
+        <div class="form-inline">
+            <form method="POST">
+                <label class="control-label">Объект оценки: </label>
+                @Html.DropDownListFor(x => x.SelectedObjectId, new SelectList(Model.Objects, "Value", "Text"), "Выбрать..", new { @class = "form-control" })
+                <br style="margin-bottom: 1em;" />
+
+                <label class="control-label">Блок: </label>
+                @Html.DropDownListFor(x => x.SelectedBlockId, new SelectList(Model.Blocks, "Value", "Text"), "Выбрать блок..", new { @class = "form-control" })
+                <br style="margin-bottom: 1em;" />
+
+                <label class="control-label">Категория: </label>
+                @Html.DropDownListFor(x => x.SelectedCategoryId, new SelectList(Model.Categories, "Value", "Text"), "Выбрать категорию..", new { @class = "form-control" })
+                <br />
+                <a href="/ComissionRoom/UncheckedMarksList" class="btn btn-default">Сброс</a>
+                <input type="submit" value="Фильтр" class="btn btn-default" />
+
+            </form>
+
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <a href="/ComissionRoom/MainMenu" class="btn btn-default">Моя страничка</a>
+        <a href="/ComissionRoom/MyCheckedMarksList" class="btn btn-default">Список проверенных мною работ</a>
+    </div>
+</div>
+
+
+
+@section scripts {
+    <script type="text/javascript">
+       $(function() {
+            $("#SelectedBlockId").change(function() {
+                var val = $(this).val();
+                var subItems = "";
+                $.getJSON("@Url.Action("GetCategories", "ComissionRoom")", { id: val }, function(data) {
+                    $.each(data, function(index, item) {
+                        subItems += "<option value='" + item.Value + "'>" + item.Text + "</option>"
+                    });
+                    $("#SelectedCategoryId").html(subItems)
+                });
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+            $("#SelectedObjectId").change(function() {
+                var val = $(this).val();
+                var subItems = "";
+                $.getJSON("@Url.Action("GetBlocks", "ComissionRoom")", { id: val }, function(data) {
+                    $.each(data, function(index, item) {
+                        subItems += "<option value='" + item.Value + "'>" + item.Text + "</option>"
+                    });
+                    $("#SelectedBlockId").html(subItems)
+                });
+            });
+        });
+    </script>
+}
+
+
+
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            Оцениваемый
+        </th>
+        <th>
+            Критерий
+        </th>
+        <th>
+            Количество
+        </th>
+        <th>
+            Документ
+        </th>
+        <th>
+            Статус
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Data)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Criteria.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CriteriaCount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HasDocument)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OldStatus)
+            </td>
+            <td>
+                @Html.ActionLink("Редактировать", "Check", new { id = item.IdMarkTeacher })
+            </td>
+
+        </tr>
+    }
+
+</table>

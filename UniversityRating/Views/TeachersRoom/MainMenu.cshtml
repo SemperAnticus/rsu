@@ -1,0 +1,96 @@
+﻿@model UniversityRating.Models.AnketaTeacher
+
+
+@{
+    ViewBag.Title = "MainMenu";
+}
+
+
+<div class="row">
+    <div class="col-md-8">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Анкетные данные</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.teacher.Id)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.teacher.Name,"ФИО", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 marghalf">
+                        @Html.DisplayFor(model => model.teacher.Name, new { htmlAttributes = new { @class = "form-control marghalf"} })
+                        @Html.ValidationMessageFor(model => model.teacher.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.teacher.Kafedra.Id_Facility, "Факультет", htmlAttributes: new {@class = "control-label col-md-2"})
+                    <div class="col-md-10 marghalf">
+                        @Html.DisplayFor(model=>model.teacher.Kafedra.Facility.Name, null, new {@class = "form-control"})
+                        @Html.ValidationMessageFor(model => model.teacher.Id_Kafedra, "", new {@class = "text-danger"})
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.teacher.Id_Kafedra, "Кафедра", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 marghalf">
+                        @Html.DisplayFor(model => model.teacher.Kafedra.Name, null, new { @class = "form-control marghalf"})
+                        @Html.ValidationMessageFor(model => model.teacher.Id_Kafedra, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group ">
+                    @Html.LabelFor(model => model.teacher.Id_Position, "Должность", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10 marghalf">
+                        @Html.DisplayFor(model => model.teacher.Position_Teachers.Name, null, new { @class = "form-control marghalf"})
+                       @Html.ValidationMessageFor(model => model.teacher.Id_Position, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="rdStateTrue" class = "control-label col-md-3">Штатный</label>
+                    <div class="col-md-9">
+                        @Html.RadioButtonFor(model => model.isState, "Штатный", new {@class = "form-control disabled", id = "rdStateTrue"})
+                    </div>
+                    <label for="rdStateFalse" class="control-label col-md-3">По совместительству</label>
+                    <div class="col-md-9">
+                        @Html.RadioButtonFor(model => model.isState, "По совместительству", new { @class = "form-control disabled", id = "rdStateFalse" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.teacher.Staj,"Педагогический стаж(в годах): ", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9 marghalf">
+                        @Html.DisplayFor(model => model.teacher.Staj, new { htmlAttributes = new { @class = "form-control marghalf"} })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <a href="/TeachersRoom/Anketa" class="btn btn-default">Изменить</a>
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+    <div class="col-md-4" style="margin-top: 4em;">
+
+        <a href="/TeachersRoom/TeacherBLocks" style="text-decoration: none;">
+            <input type="button" src="" value="Заполнить рейтинговый лист" class="btn btn-primary" style="width: 280px; display: flex; font-size: 18px; margin-top: 3rem;" />
+        </a>
+
+        <a href="/TeachersRoom/ShowMarks/1" style="text-decoration: none;">
+            <input type="button" src="" value="Посмотреть оценки" class="btn btn-default" style="width: 280px; display: flex; font-size: 18px;"/>
+        </a>
+
+    </div>
+
+
+</div>
+

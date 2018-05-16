@@ -1,0 +1,107 @@
+﻿@model UniversityRating.Models.AnketaTeacher
+
+
+@{
+    ViewBag.Title = "MainMenu";
+}
+
+
+<div class="row">
+    <div class="col-md-8">
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Анкетные данные</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.teacher.Id)
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.teacher.Name,"ФИО", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.teacher.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.teacher.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.teacher.Kafedra.Id_Facility, "Факультет", htmlAttributes: new {@class = "control-label col-md-2"})
+                    <div class="col-md-10">
+                        @Html.DropDownList("Id_Facility", null, htmlAttributes: new {@class = "form-control"})
+                        @Html.ValidationMessageFor(model => model.teacher.Id_Kafedra, "", new {@class = "text-danger"})
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.teacher.Id_Kafedra, "Кафедра", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("Id_Kafedra", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.teacher.Id_Kafedra, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.teacher.Id_Position, "Должность", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("Id_Position", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.teacher.Id_Position, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="rdStateTrue" class = "control-label col-md-3">Штатный</label>
+                    <div class="col-md-9">
+                        @Html.RadioButtonFor(model => model.isState, "Штатный", new {@class = "form-control", id = "rdStateTrue"})
+                    </div>
+                    <label for="rdStateFalse" class="control-label col-md-3">По совместительству</label>
+                    <div class="col-md-9">
+                        @Html.RadioButtonFor(model => model.isState, "По совместительству", new { @class = "form-control", id = "rdStateFalse" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="rdVypuskTrue" class="control-label col-md-3">Выпускающий</label>
+                    <div class="col-md-9">
+                        @Html.RadioButtonFor(model => model.isVypusk, "Выпускающий", new { @class = "form-control", id = "rdStateTrue" })
+                    </div>
+                    <label for="rdVypuskFalse" class="control-label col-md-3">Не выпускающий</label>
+                    <div class="col-md-9">
+                        @Html.RadioButtonFor(model => model.isVypusk, "Не выпускающий", new { @class = "form-control", id = "rdStateFalse" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Staj,"Стаж работы: ", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Staj, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.teacher.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Сохранить" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+    </div>
+
+    <div class="col-md-4" style="margin-top: 4em;">
+
+        <a href="/EditMark_Teachers/Index/1" style="text-decoration: none;">
+            <input type="button" src="" value="Заполнить рейтинговый лист" class="btn btn-primary" style="width: 280px; display: flex; font-size: 18px; margin-top: 3rem;" />
+        </a>
+
+        <a href="/TeachersRoom/Index/1" style="text-decoration: none;">
+            <input type="button" src="" value="Посмотреть оценки" class="btn btn-default" style="width: 280px; display: flex; font-size: 18px;" />
+        </a>
+    </div>
+
+
+</div>
+

@@ -1,0 +1,692 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UniversityRatingModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Block_Facility">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="110" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Category_Facility" Relationship="Self.FK_Category_Facility_Block_Facility" FromRole="Block_Facility" ToRole="Category_Facility" />
+  </EntityType>
+  <EntityType Name="Block_Kafedra">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeName" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category_Kafedra" Relationship="Self.FK_Category_Kafedra_Block_Kafedra" FromRole="Block_Kafedra" ToRole="Category_Kafedra" />
+  </EntityType>
+  <EntityType Name="Block_Teachers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CodeName" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Category_Teachers" Relationship="Self.FK_Category_Teachers_Block" FromRole="Block_Teachers" ToRole="Category_Teachers" />
+  </EntityType>
+  <EntityType Name="Category_Facility">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="180" FixedLength="false" Unicode="true" />
+    <Property Name="Id_block" Type="Int32" />
+    <NavigationProperty Name="Block_Facility" Relationship="Self.FK_Category_Facility_Block_Facility" FromRole="Category_Facility" ToRole="Block_Facility" />
+    <NavigationProperty Name="Criteria_Facility" Relationship="Self.FK_Criteria_Facility_Category_Facility" FromRole="Category_Facility" ToRole="Criteria_Facility" />
+  </EntityType>
+  <EntityType Name="Category_Kafedra">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Id_Block" Type="Int32" />
+    <NavigationProperty Name="Block_Kafedra" Relationship="Self.FK_Category_Kafedra_Block_Kafedra" FromRole="Category_Kafedra" ToRole="Block_Kafedra" />
+    <NavigationProperty Name="Criteria_Kafedra" Relationship="Self.FK_Criteria_Kafedra_Category_Kafedra" FromRole="Category_Kafedra" ToRole="Criteria_Kafedra" />
+  </EntityType>
+  <EntityType Name="Category_Teachers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Id_block" Type="Int32" Nullable="false" />
+    <Property Name="is_multi_Select" Type="Int32" />
+    <NavigationProperty Name="Block_Teachers" Relationship="Self.FK_Category_Teachers_Block" FromRole="Category_Teachers" ToRole="Block_Teachers" />
+    <NavigationProperty Name="Сriteria_Teachers" Relationship="Self.FK_Сriteria_Teachers_Category_Teachers" FromRole="Category_Teachers" ToRole="Сriteria_Teachers" />
+  </EntityType>
+  <EntityType Name="Comission">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Id_Position" Type="Int32" />
+    <Property Name="Id_User" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Position_Teachers" Relationship="Self.FK_Comission_Position_Teachers" FromRole="Comission" ToRole="Position_Teachers" />
+    <NavigationProperty Name="User" Relationship="Self.FK_Comission_Users" FromRole="Comission" ToRole="Users" />
+    <NavigationProperty Name="MarkTeachersChecks" Relationship="Self.FK_MarkTeachersChecks_Comission" FromRole="Comission" ToRole="MarkTeachersChecks" />
+  </EntityType>
+  <EntityType Name="Criteria_Facility">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="110" FixedLength="false" Unicode="true" />
+    <Property Name="Mark" Type="Int32" />
+    <Property Name="Id_Category" Type="Int32" />
+    <NavigationProperty Name="Category_Facility" Relationship="Self.FK_Criteria_Facility_Category_Facility" FromRole="Criteria_Facility" ToRole="Category_Facility" />
+    <NavigationProperty Name="Mark_Facility" Relationship="Self.FK_Mark_Facility_Criteria_Facility" FromRole="Criteria_Facility" ToRole="Mark_Facility" />
+  </EntityType>
+  <EntityType Name="Criteria_Kafedra">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Mark" Type="Int32" />
+    <Property Name="Id_Category" Type="Int32" />
+    <NavigationProperty Name="Category_Kafedra" Relationship="Self.FK_Criteria_Kafedra_Category_Kafedra" FromRole="Criteria_Kafedra" ToRole="Category_Kafedra" />
+    <NavigationProperty Name="Mark_Kafedra" Relationship="Self.FK_Mark_Kafedra_Criteria_Kafedra" FromRole="Criteria_Kafedra" ToRole="Mark_Kafedra" />
+  </EntityType>
+  <EntityType Name="Facility">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <Property Name="Mark" Type="Int32" />
+    <Property Name="Id_TeacherDecan" Type="Int32" />
+    <Property Name="SName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Kafedras" Relationship="Self.FK_Kafedra_Facility" FromRole="Facility" ToRole="Kafedra" />
+    <NavigationProperty Name="Mark_Facility" Relationship="Self.FK_Mark_Facility_Facility" FromRole="Facility" ToRole="Mark_Facility" />
+  </EntityType>
+  <EntityType Name="Kafedra">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Id_Facility" Type="Int32" Nullable="false" />
+    <Property Name="Mark" Type="Int32" />
+    <Property Name="Is_Released" Type="Boolean" Nullable="false" />
+    <Property Name="Id_TeacherZav" Type="Int32" />
+    <Property Name="SName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Facility" Relationship="Self.FK_Kafedra_Facility" FromRole="Kafedra" ToRole="Facility" />
+    <NavigationProperty Name="Teacher" Relationship="Self.FK_Kafedra_Teachers" FromRole="Kafedra" ToRole="Teachers" />
+    <NavigationProperty Name="Mark_Kafedra" Relationship="Self.FK_Mark_Kafedra_Kafedra" FromRole="Kafedra" ToRole="Mark_Kafedra" />
+    <NavigationProperty Name="Teachers" Relationship="Self.FK_Teachers_Kafedra" FromRole="Kafedra" ToRole="Teachers" />
+  </EntityType>
+  <EntityType Name="Mark_Facility">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Facility" Type="Int32" />
+    <Property Name="Id_Criteria" Type="Int32" />
+    <Property Name="Kolvo_ed" Type="Int32" />
+    <Property Name="Id_status" Type="Int32" />
+    <Property Name="kolvo_mark" Type="Int32" />
+    <NavigationProperty Name="Criteria_Facility" Relationship="Self.FK_Mark_Facility_Criteria_Facility" FromRole="Mark_Facility" ToRole="Criteria_Facility" />
+    <NavigationProperty Name="Facility" Relationship="Self.FK_Mark_Facility_Facility" FromRole="Mark_Facility" ToRole="Facility" />
+    <NavigationProperty Name="Status_Doc_Facility" Relationship="Self.FK_Status_Doc_Facility_Mark_Facility" FromRole="Mark_Facility" ToRole="Status_Doc_Facility" />
+  </EntityType>
+  <EntityType Name="Mark_Kafedra">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Kafedra" Type="Int32" Nullable="false" />
+    <Property Name="Id_Criteria" Type="Int32" Nullable="false" />
+    <Property Name="Kolvo_ed" Type="Single" Nullable="false" />
+    <Property Name="Id_status" Type="Int32" Nullable="false" />
+    <Property Name="Kolvo_Mark" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Criteria_Kafedra" Relationship="Self.FK_Mark_Kafedra_Criteria_Kafedra" FromRole="Mark_Kafedra" ToRole="Criteria_Kafedra" />
+    <NavigationProperty Name="Kafedra" Relationship="Self.FK_Mark_Kafedra_Kafedra" FromRole="Mark_Kafedra" ToRole="Kafedra" />
+    <NavigationProperty Name="Status_Doc_Kafedra" Relationship="Self.FK_Status_Doc_Kafedra_Mark_Kafedra" FromRole="Mark_Kafedra" ToRole="Status_Doc_Kafedra" />
+  </EntityType>
+  <EntityType Name="Mark_Teachers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_teachers" Type="Int32" />
+    <Property Name="Id_Criteria" Type="Int32" />
+    <Property Name="Kolvo_ed" Type="Int32" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Kolvo_Mark" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Teacher" Relationship="Self.FK_Mark_Teachers_Teachers" FromRole="Mark_Teachers" ToRole="Teachers" />
+    <NavigationProperty Name="Сriteria_Teachers" Relationship="Self.FK_Mark_Teachers_Сriteria_Teachers" FromRole="Mark_Teachers" ToRole="Сriteria_Teachers" />
+    <NavigationProperty Name="MarkTeachersChecks" Relationship="Self.FK_MarkTeachersChecks_Mark_Teachers" FromRole="Mark_Teachers" ToRole="MarkTeachersChecks" />
+    <NavigationProperty Name="Status_Doc_Teacher" Relationship="Self.FK_Status_Doc_Teacher_Mark_Teachers" FromRole="Mark_Teachers" ToRole="Status_Doc_Teacher" />
+  </EntityType>
+  <EntityType Name="MarkTeachersCheck">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Id_Comission" Type="Int32" Nullable="false" />
+    <Property Name="Id_MarkTeacher" Type="Int32" Nullable="false" />
+    <Property Name="oldStatus" Type="Int32" Nullable="false" />
+    <Property Name="newStatus" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Comission" Relationship="Self.FK_MarkTeachersChecks_Comission" FromRole="MarkTeachersChecks" ToRole="Comission" />
+    <NavigationProperty Name="Mark_Teachers" Relationship="Self.FK_MarkTeachersChecks_Mark_Teachers" FromRole="MarkTeachersChecks" ToRole="Mark_Teachers" />
+  </EntityType>
+  <EntityType Name="Position_Teachers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="Comissions" Relationship="Self.FK_Comission_Position_Teachers" FromRole="Position_Teachers" ToRole="Comission" />
+    <NavigationProperty Name="Teachers" Relationship="Self.FK_Teachers_Position_Teachers" FromRole="Position_Teachers" ToRole="Teachers" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Status_Doc_Facility">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Link_Doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Mark_Facility" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Mark_Facility" Relationship="Self.FK_Status_Doc_Facility_Mark_Facility" FromRole="Status_Doc_Facility" ToRole="Mark_Facility" />
+  </EntityType>
+  <EntityType Name="Status_Doc_Kafedra">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Link_Doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Mark_Kafedra" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Mark_Kafedra" Relationship="Self.FK_Status_Doc_Kafedra_Mark_Kafedra" FromRole="Status_Doc_Kafedra" ToRole="Mark_Kafedra" />
+  </EntityType>
+  <EntityType Name="Status_Doc_Teacher">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Link_Doc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Id_Mark_Teacher" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Mark_Teachers" Relationship="Self.FK_Status_Doc_Teacher_Mark_Teachers" FromRole="Status_Doc_Teacher" ToRole="Mark_Teachers" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Teacher">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TotalMark" Type="Int32" />
+    <Property Name="Id_Kafedra" Type="Int32" />
+    <Property Name="Id_Position" Type="Int32" />
+    <Property Name="Is_Staff" Type="Boolean" />
+    <Property Name="Id_User" Type="Int32" />
+    <Property Name="d_b" Type="DateTime" Precision="0" />
+    <Property Name="vypusk" Type="Boolean" />
+    <Property Name="data_priema" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Kafedras" Relationship="Self.FK_Kafedra_Teachers" FromRole="Teachers" ToRole="Kafedra" />
+    <NavigationProperty Name="Kafedra" Relationship="Self.FK_Teachers_Kafedra" FromRole="Teachers" ToRole="Kafedra" />
+    <NavigationProperty Name="Mark_Teachers" Relationship="Self.FK_Mark_Teachers_Teachers" FromRole="Teachers" ToRole="Mark_Teachers" />
+    <NavigationProperty Name="Position_Teachers" Relationship="Self.FK_Teachers_Position_Teachers" FromRole="Teachers" ToRole="Position_Teachers" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id_Role" Type="Int32" />
+    <Property Name="loginRu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="IsFirstTimeLogin" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Comissions" Relationship="Self.FK_Comission_Users" FromRole="Users" ToRole="Comission" />
+    <NavigationProperty Name="Role" Relationship="Self.FK_Users_Roles" FromRole="Users" ToRole="Roles" />
+  </EntityType>
+  <EntityType Name="Сriteria_Teachers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Mark" Type="Int32" Nullable="false" />
+    <Property Name="Id_Category" Type="Int32" Nullable="false" />
+    <Property Name="is_MultiCoeff" Type="Int32" />
+    <NavigationProperty Name="Category_Teachers" Relationship="Self.FK_Сriteria_Teachers_Category_Teachers" FromRole="Сriteria_Teachers" ToRole="Category_Teachers" />
+    <NavigationProperty Name="Mark_Teachers" Relationship="Self.FK_Mark_Teachers_Сriteria_Teachers" FromRole="Сriteria_Teachers" ToRole="Mark_Teachers" />
+  </EntityType>
+  <Association Name="FK_Category_Facility_Block_Facility">
+    <End Role="Block_Facility" Type="Self.Block_Facility" Multiplicity="0..1" />
+    <End Role="Category_Facility" Type="Self.Category_Facility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Block_Facility">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Category_Facility">
+        <PropertyRef Name="Id_block" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_Kafedra_Block_Kafedra">
+    <End Role="Block_Kafedra" Type="Self.Block_Kafedra" Multiplicity="0..1" />
+    <End Role="Category_Kafedra" Type="Self.Category_Kafedra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Block_Kafedra">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Category_Kafedra">
+        <PropertyRef Name="Id_Block" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Category_Teachers_Block">
+    <End Role="Block_Teachers" Type="Self.Block_Teachers" Multiplicity="1" />
+    <End Role="Category_Teachers" Type="Self.Category_Teachers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Block_Teachers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Category_Teachers">
+        <PropertyRef Name="Id_block" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Criteria_Facility_Category_Facility">
+    <End Role="Category_Facility" Type="Self.Category_Facility" Multiplicity="0..1" />
+    <End Role="Criteria_Facility" Type="Self.Criteria_Facility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category_Facility">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Criteria_Facility">
+        <PropertyRef Name="Id_Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Criteria_Kafedra_Category_Kafedra">
+    <End Role="Category_Kafedra" Type="Self.Category_Kafedra" Multiplicity="0..1" />
+    <End Role="Criteria_Kafedra" Type="Self.Criteria_Kafedra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category_Kafedra">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Criteria_Kafedra">
+        <PropertyRef Name="Id_Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Сriteria_Teachers_Category_Teachers">
+    <End Role="Category_Teachers" Type="Self.Category_Teachers" Multiplicity="1" />
+    <End Role="Сriteria_Teachers" Type="Self.Сriteria_Teachers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category_Teachers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Сriteria_Teachers">
+        <PropertyRef Name="Id_Category" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comission_Position_Teachers">
+    <End Role="Position_Teachers" Type="Self.Position_Teachers" Multiplicity="0..1" />
+    <End Role="Comission" Type="Self.Comission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position_Teachers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comission">
+        <PropertyRef Name="Id_Position" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Comission_Users">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Comission" Type="Self.Comission" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Comission">
+        <PropertyRef Name="Id_User" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MarkTeachersChecks_Comission">
+    <End Role="Comission" Type="Self.Comission" Multiplicity="1" />
+    <End Role="MarkTeachersChecks" Type="Self.MarkTeachersCheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comission">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MarkTeachersChecks">
+        <PropertyRef Name="Id_Comission" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mark_Facility_Criteria_Facility">
+    <End Role="Criteria_Facility" Type="Self.Criteria_Facility" Multiplicity="0..1" />
+    <End Role="Mark_Facility" Type="Self.Mark_Facility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Criteria_Facility">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Mark_Facility">
+        <PropertyRef Name="Id_Criteria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mark_Kafedra_Criteria_Kafedra">
+    <End Role="Criteria_Kafedra" Type="Self.Criteria_Kafedra" Multiplicity="1" />
+    <End Role="Mark_Kafedra" Type="Self.Mark_Kafedra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Criteria_Kafedra">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Mark_Kafedra">
+        <PropertyRef Name="Id_Criteria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kafedra_Facility">
+    <End Role="Facility" Type="Self.Facility" Multiplicity="1" />
+    <End Role="Kafedra" Type="Self.Kafedra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Facility">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Kafedra">
+        <PropertyRef Name="Id_Facility" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mark_Facility_Facility">
+    <End Role="Facility" Type="Self.Facility" Multiplicity="0..1" />
+    <End Role="Mark_Facility" Type="Self.Mark_Facility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Facility">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Mark_Facility">
+        <PropertyRef Name="Id_Facility" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Kafedra_Teachers">
+    <End Role="Teachers" Type="Self.Teacher" Multiplicity="0..1" />
+    <End Role="Kafedra" Type="Self.Kafedra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Kafedra">
+        <PropertyRef Name="Id_TeacherZav" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mark_Kafedra_Kafedra">
+    <End Role="Kafedra" Type="Self.Kafedra" Multiplicity="1" />
+    <End Role="Mark_Kafedra" Type="Self.Mark_Kafedra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kafedra">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Mark_Kafedra">
+        <PropertyRef Name="Id_Kafedra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teachers_Kafedra">
+    <End Role="Kafedra" Type="Self.Kafedra" Multiplicity="0..1" />
+    <End Role="Teachers" Type="Self.Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kafedra">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Teachers">
+        <PropertyRef Name="Id_Kafedra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Status_Doc_Facility_Mark_Facility">
+    <End Role="Mark_Facility" Type="Self.Mark_Facility" Multiplicity="1" />
+    <End Role="Status_Doc_Facility" Type="Self.Status_Doc_Facility" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mark_Facility">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Status_Doc_Facility">
+        <PropertyRef Name="Id_Mark_Facility" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Status_Doc_Kafedra_Mark_Kafedra">
+    <End Role="Mark_Kafedra" Type="Self.Mark_Kafedra" Multiplicity="1" />
+    <End Role="Status_Doc_Kafedra" Type="Self.Status_Doc_Kafedra" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mark_Kafedra">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Status_Doc_Kafedra">
+        <PropertyRef Name="Id_Mark_Kafedra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mark_Teachers_Teachers">
+    <End Role="Teachers" Type="Self.Teacher" Multiplicity="0..1" />
+    <End Role="Mark_Teachers" Type="Self.Mark_Teachers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Mark_Teachers">
+        <PropertyRef Name="Id_teachers" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Mark_Teachers_Сriteria_Teachers">
+    <End Role="Сriteria_Teachers" Type="Self.Сriteria_Teachers" Multiplicity="0..1" />
+    <End Role="Mark_Teachers" Type="Self.Mark_Teachers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Сriteria_Teachers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Mark_Teachers">
+        <PropertyRef Name="Id_Criteria" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MarkTeachersChecks_Mark_Teachers">
+    <End Role="Mark_Teachers" Type="Self.Mark_Teachers" Multiplicity="1" />
+    <End Role="MarkTeachersChecks" Type="Self.MarkTeachersCheck" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mark_Teachers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MarkTeachersChecks">
+        <PropertyRef Name="Id_MarkTeacher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Status_Doc_Teacher_Mark_Teachers">
+    <End Role="Mark_Teachers" Type="Self.Mark_Teachers" Multiplicity="1" />
+    <End Role="Status_Doc_Teacher" Type="Self.Status_Doc_Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Mark_Teachers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Status_Doc_Teacher">
+        <PropertyRef Name="Id_Mark_Teacher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teachers_Position_Teachers">
+    <End Role="Position_Teachers" Type="Self.Position_Teachers" Multiplicity="0..1" />
+    <End Role="Teachers" Type="Self.Teacher" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Position_Teachers">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Teachers">
+        <PropertyRef Name="Id_Position" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Users_Roles">
+    <End Role="Roles" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="Users" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Roles">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Users">
+        <PropertyRef Name="Id_Role" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="UniversityRatingEntities7" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Block_Facility" EntityType="Self.Block_Facility" />
+    <EntitySet Name="Block_Kafedra" EntityType="Self.Block_Kafedra" />
+    <EntitySet Name="Block_Teachers" EntityType="Self.Block_Teachers" />
+    <EntitySet Name="Category_Facility" EntityType="Self.Category_Facility" />
+    <EntitySet Name="Category_Kafedra" EntityType="Self.Category_Kafedra" />
+    <EntitySet Name="Category_Teachers" EntityType="Self.Category_Teachers" />
+    <EntitySet Name="Comissions" EntityType="Self.Comission" />
+    <EntitySet Name="Criteria_Facility" EntityType="Self.Criteria_Facility" />
+    <EntitySet Name="Criteria_Kafedra" EntityType="Self.Criteria_Kafedra" />
+    <EntitySet Name="Facilities" EntityType="Self.Facility" />
+    <EntitySet Name="Kafedras" EntityType="Self.Kafedra" />
+    <EntitySet Name="Mark_Facility" EntityType="Self.Mark_Facility" />
+    <EntitySet Name="Mark_Kafedra" EntityType="Self.Mark_Kafedra" />
+    <EntitySet Name="Mark_Teachers" EntityType="Self.Mark_Teachers" />
+    <EntitySet Name="MarkTeachersChecks" EntityType="Self.MarkTeachersCheck" />
+    <EntitySet Name="Position_Teachers" EntityType="Self.Position_Teachers" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="Status_Doc_Facility" EntityType="Self.Status_Doc_Facility" />
+    <EntitySet Name="Status_Doc_Kafedra" EntityType="Self.Status_Doc_Kafedra" />
+    <EntitySet Name="Status_Doc_Teacher" EntityType="Self.Status_Doc_Teacher" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Teachers" EntityType="Self.Teacher" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <EntitySet Name="Сriteria_Teachers" EntityType="Self.Сriteria_Teachers" />
+    <AssociationSet Name="FK_Category_Facility_Block_Facility" Association="Self.FK_Category_Facility_Block_Facility">
+      <End Role="Block_Facility" EntitySet="Block_Facility" />
+      <End Role="Category_Facility" EntitySet="Category_Facility" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_Kafedra_Block_Kafedra" Association="Self.FK_Category_Kafedra_Block_Kafedra">
+      <End Role="Block_Kafedra" EntitySet="Block_Kafedra" />
+      <End Role="Category_Kafedra" EntitySet="Category_Kafedra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Category_Teachers_Block" Association="Self.FK_Category_Teachers_Block">
+      <End Role="Block_Teachers" EntitySet="Block_Teachers" />
+      <End Role="Category_Teachers" EntitySet="Category_Teachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Criteria_Facility_Category_Facility" Association="Self.FK_Criteria_Facility_Category_Facility">
+      <End Role="Category_Facility" EntitySet="Category_Facility" />
+      <End Role="Criteria_Facility" EntitySet="Criteria_Facility" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Criteria_Kafedra_Category_Kafedra" Association="Self.FK_Criteria_Kafedra_Category_Kafedra">
+      <End Role="Category_Kafedra" EntitySet="Category_Kafedra" />
+      <End Role="Criteria_Kafedra" EntitySet="Criteria_Kafedra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Сriteria_Teachers_Category_Teachers" Association="Self.FK_Сriteria_Teachers_Category_Teachers">
+      <End Role="Category_Teachers" EntitySet="Category_Teachers" />
+      <End Role="Сriteria_Teachers" EntitySet="Сriteria_Teachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comission_Position_Teachers" Association="Self.FK_Comission_Position_Teachers">
+      <End Role="Position_Teachers" EntitySet="Position_Teachers" />
+      <End Role="Comission" EntitySet="Comissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Comission_Users" Association="Self.FK_Comission_Users">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Comission" EntitySet="Comissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MarkTeachersChecks_Comission" Association="Self.FK_MarkTeachersChecks_Comission">
+      <End Role="Comission" EntitySet="Comissions" />
+      <End Role="MarkTeachersChecks" EntitySet="MarkTeachersChecks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mark_Facility_Criteria_Facility" Association="Self.FK_Mark_Facility_Criteria_Facility">
+      <End Role="Criteria_Facility" EntitySet="Criteria_Facility" />
+      <End Role="Mark_Facility" EntitySet="Mark_Facility" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mark_Kafedra_Criteria_Kafedra" Association="Self.FK_Mark_Kafedra_Criteria_Kafedra">
+      <End Role="Criteria_Kafedra" EntitySet="Criteria_Kafedra" />
+      <End Role="Mark_Kafedra" EntitySet="Mark_Kafedra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kafedra_Facility" Association="Self.FK_Kafedra_Facility">
+      <End Role="Facility" EntitySet="Facilities" />
+      <End Role="Kafedra" EntitySet="Kafedras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mark_Facility_Facility" Association="Self.FK_Mark_Facility_Facility">
+      <End Role="Facility" EntitySet="Facilities" />
+      <End Role="Mark_Facility" EntitySet="Mark_Facility" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Kafedra_Teachers" Association="Self.FK_Kafedra_Teachers">
+      <End Role="Teachers" EntitySet="Teachers" />
+      <End Role="Kafedra" EntitySet="Kafedras" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mark_Kafedra_Kafedra" Association="Self.FK_Mark_Kafedra_Kafedra">
+      <End Role="Kafedra" EntitySet="Kafedras" />
+      <End Role="Mark_Kafedra" EntitySet="Mark_Kafedra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teachers_Kafedra" Association="Self.FK_Teachers_Kafedra">
+      <End Role="Kafedra" EntitySet="Kafedras" />
+      <End Role="Teachers" EntitySet="Teachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Status_Doc_Facility_Mark_Facility" Association="Self.FK_Status_Doc_Facility_Mark_Facility">
+      <End Role="Mark_Facility" EntitySet="Mark_Facility" />
+      <End Role="Status_Doc_Facility" EntitySet="Status_Doc_Facility" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Status_Doc_Kafedra_Mark_Kafedra" Association="Self.FK_Status_Doc_Kafedra_Mark_Kafedra">
+      <End Role="Mark_Kafedra" EntitySet="Mark_Kafedra" />
+      <End Role="Status_Doc_Kafedra" EntitySet="Status_Doc_Kafedra" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mark_Teachers_Teachers" Association="Self.FK_Mark_Teachers_Teachers">
+      <End Role="Teachers" EntitySet="Teachers" />
+      <End Role="Mark_Teachers" EntitySet="Mark_Teachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Mark_Teachers_Сriteria_Teachers" Association="Self.FK_Mark_Teachers_Сriteria_Teachers">
+      <End Role="Сriteria_Teachers" EntitySet="Сriteria_Teachers" />
+      <End Role="Mark_Teachers" EntitySet="Mark_Teachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MarkTeachersChecks_Mark_Teachers" Association="Self.FK_MarkTeachersChecks_Mark_Teachers">
+      <End Role="Mark_Teachers" EntitySet="Mark_Teachers" />
+      <End Role="MarkTeachersChecks" EntitySet="MarkTeachersChecks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Status_Doc_Teacher_Mark_Teachers" Association="Self.FK_Status_Doc_Teacher_Mark_Teachers">
+      <End Role="Mark_Teachers" EntitySet="Mark_Teachers" />
+      <End Role="Status_Doc_Teacher" EntitySet="Status_Doc_Teacher" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teachers_Position_Teachers" Association="Self.FK_Teachers_Position_Teachers">
+      <End Role="Position_Teachers" EntitySet="Position_Teachers" />
+      <End Role="Teachers" EntitySet="Teachers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Users_Roles" Association="Self.FK_Users_Roles">
+      <End Role="Roles" EntitySet="Roles" />
+      <End Role="Users" EntitySet="Users" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

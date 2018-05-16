@@ -1,0 +1,79 @@
+﻿@model UniversityRating.Models.CheckMarksViewModel 
+@using UniversityRating.Models
+
+@{
+    ViewBag.Title = "MainMenu";
+}
+<div class="jumbotron" style="background: #81b06966; margin-top: 1.5em;">
+    <div class="row">
+        <div class="col-md-8">
+            <h2>@ViewBag.FIO</h2>
+            <p class="lead">@ViewBag.Position</p>
+            <p>
+                <a href="/EditMark_Teachers" class="btn btn-primary btn-lg">Список проверенных мною оценок &raquo;</a>
+                <a href="/ComissionRoom/UncheckedMarksList" class="btn btn-primary btn-lg">Список непроверенных оценок &raquo;</a>
+            </p>
+        </div>
+
+        <div>
+            <div class="col-md-4">
+                <div class="container-rating" style="color: #ffffff; background-color: #339259; margin-top: 2em;">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true" style="font-size: 3em;"></span>
+                    <p>Проверено мною: @ViewBag.MyMarkCount</p>
+                    <p>Непроверенных на данный момент: @ViewBag.UnCheckedMarksCount</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="jumbotron">
+
+    <h2 style="margin-bottom: 2em; text-align: center;">Последние мною проверенные оценки</h2>
+
+    <table class="table">
+        <tr>
+            <th>
+                Оцениваемый
+            </th>
+            <th>
+                Критерий
+            </th>
+            <th>
+                Количество
+            </th>
+            <th>
+                Документ
+            </th>
+            <th>
+                Статус
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.Data)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Criteria.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CriteriaCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HasDocument)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OldStatus)
+                </td>
+
+            </tr>
+        }
+
+    </table>
+
+</div>

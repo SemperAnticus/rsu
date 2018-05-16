@@ -1,0 +1,176 @@
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\roslyn\csc.exe
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\roslyn\vbc.exe
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\roslyn\VBCSCompiler.exe
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\UniversityRating.dll.config
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\UniversityRating.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\UniversityRating.pdb
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Antlr3.Runtime.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\EntityFramework.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\EntityFramework.SqlServer.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Newtonsoft.Json.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Owin.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\System.Web.Helpers.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\System.Web.Mvc.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\System.Web.Optimization.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\System.Web.Razor.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\System.Web.WebPages.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\System.Web.WebPages.Razor.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\WebGrease.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\System.Web.Helpers.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\System.Web.Mvc.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\System.Web.Optimization.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\System.Web.Razor.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\System.Web.WebPages.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\System.Web.WebPages.Razor.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Antlr3.Runtime.pdb
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Newtonsoft.Json.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\EntityFramework.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\EntityFramework.SqlServer.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\System.Web.Helpers.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\System.Web.Mvc.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\System.Web.Optimization.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\System.Web.Razor.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\System.Web.WebPages.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\System.Web.WebPages.Deployment.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\System.Web.WebPages.Razor.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\EntityFramework.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\Microsoft.AspNet.Identity.Core.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\Microsoft.AspNet.Identity.Owin.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\Microsoft.Owin.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\Microsoft.Owin.Host.SystemWeb.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\Microsoft.Owin.Security.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\Microsoft.Owin.Security.Facebook.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\Microsoft.Owin.Security.Google.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\obj\Debug\UniversityRating.dll
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\obj\Debug\UniversityRating.pdb
+C:\Users\Жаныл\Documents\Visual Studio 2015\Projects\UniversityRating\UniversityRating\obj\Debug\UniversityRating.csprojResolveAssemblyReference.cache
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\roslyn\csc.exe
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\roslyn\System.Collections.Immutable.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\roslyn\System.Reflection.Metadata.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\roslyn\vbc.exe
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\roslyn\VBCSCompiler.exe
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\roslyn\VBCSCompiler.exe.config
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\UniversityRating.dll.config
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\UniversityRating.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\UniversityRating.pdb
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Antlr3.Runtime.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\EntityFramework.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\EntityFramework.SqlServer.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.AspNet.Identity.Core.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Cookies.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Facebook.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Google.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.OAuth.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Twitter.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Web.Infrastructure.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Newtonsoft.Json.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Owin.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\System.Web.Helpers.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\System.Web.Mvc.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\System.Web.Optimization.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\System.Web.Razor.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\System.Web.WebPages.Deployment.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\System.Web.WebPages.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\System.Web.WebPages.Razor.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\WebGrease.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\System.Web.Helpers.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\System.Web.Mvc.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\System.Web.Optimization.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\System.Web.Razor.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\System.Web.WebPages.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\System.Web.WebPages.Deployment.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\System.Web.WebPages.Razor.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Antlr3.Runtime.pdb
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Newtonsoft.Json.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\EntityFramework.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\EntityFramework.SqlServer.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.AspNet.Identity.Core.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Facebook.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Cookies.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.OAuth.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Google.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.Twitter.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\System.Web.Helpers.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\System.Web.Mvc.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\System.Web.Optimization.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\System.Web.Razor.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\System.Web.WebPages.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\System.Web.WebPages.Deployment.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\System.Web.WebPages.Razor.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\EntityFramework.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\EntityFramework.SqlServer.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\Microsoft.AspNet.Identity.Core.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\Microsoft.AspNet.Identity.Owin.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\Microsoft.AspNet.Identity.EntityFramework.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\Microsoft.Owin.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\Microsoft.Owin.Host.SystemWeb.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\Microsoft.Owin.Security.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\Microsoft.Owin.Security.Facebook.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\Microsoft.Owin.Security.Google.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\Microsoft.Owin.Security.Twitter.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\bin\ru\Microsoft.Owin.Security.MicrosoftAccount.resources.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\obj\Debug\UniversityRating.dll
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\obj\Debug\UniversityRating.pdb
+E:\PoliTech\6-семестр\projects\UR\UniversityRating\UniversityRating\obj\Debug\UniversityRating.csprojResolveAssemblyReference.cache

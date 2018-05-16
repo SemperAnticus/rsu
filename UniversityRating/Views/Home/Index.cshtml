@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron" style="height: 540px; background: url(/images/asoggetti-413830-unsplash.jpg); background-size: cover;">
+    <h1 style="margin-bottom: 1em; margin-top: 0.5em;color: #2c335a">Рейтинг ППС и учебных структур КГТУ им. И. Раззакова</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <a class="c-preview" href="/RatingReports/Teachers">
+                <div class="c-preview__img"></div>
+                <h2 class="c-preview__title">Рейтинг ППС</h2>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a class="c-preview" href="/RatingReports/Departments?IsRealesed=true">
+                <div class="c-preview__img"></div>
+                <h2 class="c-preview__title">Рейтинг кафедр</h2>
+            </a>
+        </div>
+
+        <div class="col-md-4">
+            <a class="c-preview" href="/RatingReports/Faculties?isAverage=true&withUnRealesed=true">
+                <div class="c-preview__img"></div>
+                <h2 class="c-preview__title">Рейтинг факультетов / институтов</h2>
+            </a>
+        </div>
+    </div>
+</div>
+

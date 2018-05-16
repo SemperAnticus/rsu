@@ -1,0 +1,236 @@
+﻿@model UniversityRating.Models.ShowMarksObjectFaculty
+@{
+    ViewBag.Title = "ShowMarks";
+}
+<h1 style="text-align: center; padding: 10px 40px; margin: 0 0 1em 0; border-radius: 0 0 1em 1em;
+    background-color: #ecf0f1;">
+    Итоговые оценки <br /> Факультет / Институт: @ViewBag.FacultyName
+</h1>
+
+<div class="row">
+    <div class="col-md-7">
+        <div style="margin-top: 1em; margin-bottom: 1em; display: -moz-groupbox;">
+            @if (ViewBag.IdKafedra == null)
+            {
+                foreach (var item in @ViewBag.Blocks)
+                {
+                    if (@ViewBag.IdBlock == @item.Id)
+                    {
+                        <a href="/FacultyPanel/ShowMarks/@item.Id" class="btn btn-primary" style="text-decoration: none; max-width: 700px; white-space: normal;">
+                            <span class="txt">@item.CodeName) @item.Name</span>
+                            <span class="round"><i class="fa fa-chevron-right"></i></span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/FacultyPanel/ShowMarks/@item.Id" class="btn btn-default" style="text-decoration: none; max-width: 700px; white-space: normal;">
+                            <span class="txt">@item.CodeName) @item.Name</span>
+                            <span class="round"><i class="fa fa-chevron-right"></i></span>
+                        </a>
+                    }
+                }
+            }
+            else
+            {
+                foreach (var item in @ViewBag.Blocks)
+                {
+                    if (@ViewBag.IdBlock == @item.Id)
+                    {
+                        <a href="/FacultyPanel/ShowMarks?id=@item.Id&idTeacher=@ViewBag.IdKafedra" class="btn btn-primary" style="text-decoration: none; max-width: 700px; white-space: normal;">
+                            <span class="txt">@item.CodeName) @item.Name</span>
+                            <span class="round"><i class="fa fa-chevron-right"></i></span>
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/FacultyPanel/ShowMarks?id=@item.Id&idTeacher=@ViewBag.IdKafedra" class="btn btn-default" style="text-decoration: none; max-width: 700px; white-space: normal;">
+                            <span class="txt">@item.CodeName) @item.Name</span>
+                            <span class="round"><i class="fa fa-chevron-right"></i></span>
+                        </a>
+                    }
+                }
+            }
+        </div>
+
+    </div>
+
+    <div class="col-md-5">
+        <h4 style="text-align: center; margin-top: 2em; padding: 10px 40px;border-radius: 1em 1em 0 0;
+	background-color: #5dcc82; color: white; margin-bottom: 0;">
+            Общий балл факультета
+        </h4>
+        <table class="table" style="margin:0; border: #5dcc82 solid 2px;">
+            <tr>
+                <th>
+
+                </th>
+                <th>
+                    По всем блокам
+                </th>
+                <th>
+                    По текущему блоку
+                </th>
+            </tr>
+            <tr>
+                <td>
+                    Ожидаемый балл
+                </td>
+                <td>
+                    @ViewBag.WaitedTotalPoints
+                </td>
+                <td>
+                    @ViewBag.WaitedBlockTotalPoints
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Подтвержденный балл
+                </td>
+                <td>
+                    @ViewBag.CheckedTotalPoints
+                </td>
+                <td>
+                    @ViewBag.CheckedBlockTotalPoints
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+@for (int i = 0; i < Model.ManualMarks.Count; i++)
+{
+
+    <h4 style="margin-top: 2em;">@Model.ManualMarks[i].CategoryName</h4>
+    <table class="table" style="margin-top: 2em; table-layout: fixed;">
+        <tr style="font-size: 1.3em;">
+            <th style="width: 300px;">
+                Оценочный показатель
+            </th>
+            <th style="width: 120px;">
+                Количество
+            </th>
+            <th style="width: 70px;">
+                Балл за ед.
+            </th>
+            <th style="width: 70px;">
+                Общий балл
+            </th>
+            <th style="width: 250px; padding-left: 1em;">
+                Документы
+            </th>
+            <th style="width: 150px;">
+                Дата
+            </th>
+            <th style="width: 200px;">
+                Статус
+            </th>
+        </tr>
+
+        @foreach (var item in Model.ManualMarks[i].CategoryMarks)
+        {
+            <tr>
+                <td style="width: 300px;">
+                    @Html.DisplayFor(modelItem => item.Criteria_Facility.Name, new { @class = "form-control" })
+                </td>
+                <td style="width: 120px;">
+                    @Html.DisplayFor(modelItem => item.Kolvo_ed, new { @class = "form-control" })
+                </td>
+                <td style="width: 70px;">
+                    @Html.DisplayFor(modelItem => item.Criteria_Facility.Mark, new { @class = "form-control" })
+                </td>
+                <td style="width: 70px;">
+                    @Html.DisplayFor(modelItem => item.Kolvo_mark, new { @class = "form-control" })
+                </td>
+                <td style="width: 250px;">
+                    <div class="k-content">
+                        <div class="k-widget k-upload k-header k-upload-sync">
+                            <ul class="k-upload-files k-reset   ">
+                                @foreach (var ef in item.Status_Doc_Facility)
+                                {
+                                    string fName = ef.Name;
+                                    string fType = ef.FileType;
+                                    string fFullName = ef.Link_Doc;
+                                    string str = ef.FileType;
+                                    int index = str.IndexOf('/');
+                                    str = str.Substring(index + 1);
+                                    <li class="k-file" id=@ef.Id>
+                                        <a target="_blank" href="/EditMark_Teachers/GetFile?fileFullName=@fFullName&fileType=@fType&fileName=@fName"><span class="k-icon k-i-download k-icon-64" style="font-size: 30px;"></span></a>
+                                        <span class="k-file-extension-wrapper">
+                                            <span class="k-file-extension">@str</span>
+                                        </span>
+
+                                        <span class="k-file-name-size-wrapper">
+                                            <span class="k-file-name" title="@ef.Name">@ef.Name</span>
+                                            <span class="k-file-size">@ef.FileContent B</span>
+                                        </span>
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+
+                </td>
+                <td style="width: 150px;">
+                    @Html.DisplayFor(modelItem => item.Date, new { @class = "form-control" })
+                </td>
+                <td style="width: 200px;">
+                    @switch (item.Status)
+                    {
+                        case -2:
+                            <p style="color: red;">Нет подтверждающего документа</p>
+                            break;
+                        case 0:
+                            <p style="color: orange;">На обработке</p>
+                            break;
+                        case 1:
+                            <p style="color: green;">Подтвержден</p>
+                            break;
+                        case -1:
+                            <p style="color: red;">Откланен</p>
+                            break;
+                    }
+                </td>
+
+
+            </tr>
+        }
+
+    </table>
+
+}
+
+<h2 style="margin-top: 3em;"> Автоматически вычисляющиеся критерии</h2>
+<hr />
+<table class="table" style="margin-top: 1em; table-layout: fixed;">
+    <tr style="font-size: 1.3em;">
+        <th style="width: 200px;">
+            Критерий
+        </th>
+        <th style="width: 200px;">
+            Оценочный показатель
+        </th>
+        <th style="width: 150px;">
+            Количество
+        </th>
+        <th style="width: 150px;">
+            Общий балл
+        </th>
+    </tr>
+    @foreach (var item in Model.CalculatedMarks)
+    {
+        <tr>
+            <td style="width: 400px;">
+                @item.CategoryName
+            </td>
+            <td style="width: 400px;">
+                @item.Name
+            </td>
+            <td style="width: 150px;">
+                @item.Count
+            </td>
+            <td style="width: 150px;">
+                @item.Points
+            </td>
+        </tr>
+    }
+</table>

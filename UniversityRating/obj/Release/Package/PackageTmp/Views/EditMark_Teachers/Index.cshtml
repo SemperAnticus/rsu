@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2 style="text-align: center;">Рейтинговый лист</h2>
+<p style="text-align: center; font-size: 1.3em; color: #b94100;">Просим заполнить блоки рейтингового листа ППС и внести данные за текущий учебный год (с 1-инюня по 30-мая)</p>
+
+<div class="type-1">
+    @foreach (var item in @ViewBag.Blocks)
+    {
+        <a href="/EditMark_Teachers/Create/@item.Id" class="btn-1" style="text-decoration: none;">
+            <span class="txt">@item.CodeName) @item.Name</span>
+            <span class="round"><i class="fa fa-chevron-right"></i></span>
+        </a>
+
+
+
+    }
+</div>
+
